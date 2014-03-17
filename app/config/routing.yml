@@ -1,0 +1,4 @@
+angie_blog:
+    resource: "@AngieBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
