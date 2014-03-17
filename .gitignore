@@ -1,0 +1,21 @@
+#dossiers et fichiers Symfony2
+/web/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/config/paramters.yml
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/build/
+/vendor/
+/bin/
+/composer.phar
+/composer.lock
+
+#dossiers ide
+/.idea/
+/.travis.yml
+
+#fichiers cachéq OS
+.DS_Store
+Thumbs.db
