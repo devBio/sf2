@@ -15,6 +15,10 @@
 #dossiers ide
 /.idea/
 /.travis.yml
+/.buildpath
+/.project
+/.settings/
+
 
 #fichiers cachéq OS
 .DS_Store
