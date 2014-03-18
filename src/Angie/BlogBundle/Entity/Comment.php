@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  *
  * @ORM\Table(name="comment")
  * @ORM\Entity(repositoryClass="Angie\BlogBundle\Entity\CommentRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Comment extends AbstractEntity
 {
@@ -36,6 +37,38 @@ class Comment extends AbstractEntity
      * @ORM\Column(name="body", type="text")
      */
     protected $body;
+    
+    /**
+     * @ORM\column(type="datetime")
+     */
+    protected $created;
+    
+    /**
+     * @ORM\column(type="datetime")
+     */
+    protected $updated;
+    
+    
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedValue()
+    {
+    	$this->created = new \DateTime();
+    	$this->updated = new \DateTime();
+    	 
+    }
+    
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedValue()
+    {
+    	$this->created = new \DateTime();
+    	$this->updated = new \DateTime();
+    
+    }
+    
 
    
 

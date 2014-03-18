@@ -8,8 +8,8 @@
     <p>Test 1</p>
     <ul>
     {% for post in arrayPost %}
-       <li {% if post.publish == false %} style="color:red;" {% endif %} >
-            {{ post.UserName }}        
+       <li {% if post.is_published == false %} style="color:red;" {% endif %} >
+            {{ post.title }}        
        </li> 
     {% endfor %}
     </ul>
@@ -19,8 +19,8 @@
     <p>Test 2</p>
     <ul>
     {% for post in arrayPost %}
-       <li class="{{ (loop.index is odd) ? 'odd' : 'even' }}" style="{{ post.publish ? '':'color:red;' }}">
-            {{ post.UserName }}        
+       <li class="{{ (loop.index is odd) ? 'odd' : 'even' }}" style="{{ post.is_published ? '':'color:red;' }}">
+            {{ post.title }}        
        </li> 
     {% endfor %}
     </ul>
