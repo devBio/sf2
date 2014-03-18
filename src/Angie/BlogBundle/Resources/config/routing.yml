@@ -5,3 +5,9 @@ angie_blog_hello:
 angie_home: 
     pattern :  /
     defaults: { _controller: AngieBlogBundle:Index:index }
+
+angie_post: 
+    pattern :  /post/new
+    defaults: { _controller: AngieBlogBundle:Post:new }
+    
+    

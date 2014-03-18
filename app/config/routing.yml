@@ -1,6 +1,6 @@
 angie_blog:
     resource: "@AngieBlogBundle/Resources/config/routing.yml"
-    prefix:   /blog
+    prefix:   /
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
