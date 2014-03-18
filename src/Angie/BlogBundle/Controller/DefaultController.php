@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class DefaultController extends Controller
 {
+	
     /**
      * @Template("AngieBlogBundle:Default:index.html.twig")
      */
@@ -14,6 +15,11 @@ class DefaultController extends Controller
     {
 	//var_dump($this->getUser());exit();
         //return $this->render('AngieBlogBundle:Default:index.html.twig', array('name' => $name));
-	return array('name' => $name);
+	//return array('name' => $name);
+		return array('date'=> Date('D - M - Y'),'name' => $name);
     }
+    
+    
+    
+    
 }

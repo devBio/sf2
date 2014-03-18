@@ -1,3 +1,7 @@
-angie_blog_homepage:
+angie_blog_hello:
     pattern:  /hello/{name}
     defaults: { _controller: AngieBlogBundle:Default:index }
+    
+angie_home: 
+    pattern :  /
+    defaults: { _controller: AngieBlogBundle:Index:index }
