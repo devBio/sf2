@@ -1,19 +1,27 @@
-<p>Test 1</p>
-<ul>
-{% for post in arrayPost %}
-   <li {% if post.publish == false %} style="color:red;" {% endif %} >
-        {{ post.UserName }}        
-   </li> 
-{% endfor %}
-</ul>
+{% extends '::base.html.twig' %}
 
 
+{% block title %} {{ parent() }} - NJ{% endblock %}
 
-<p>Test 2</p>
-<ul>
-{% for post in arrayPost %}
-   <li class="{{ (loop.index is odd) ? 'odd' : 'even' }}" style="{{ post.publish ? '':'color:red;' }}">
-        {{ post.UserName }}        
-   </li> 
-{% endfor %}
-</ul>
+
+{% block body %}
+    <p>Test 1</p>
+    <ul>
+    {% for post in arrayPost %}
+       <li {% if post.publish == false %} style="color:red;" {% endif %} >
+            {{ post.UserName }}        
+       </li> 
+    {% endfor %}
+    </ul>
+    
+    
+    
+    <p>Test 2</p>
+    <ul>
+    {% for post in arrayPost %}
+       <li class="{{ (loop.index is odd) ? 'odd' : 'even' }}" style="{{ post.publish ? '':'color:red;' }}">
+            {{ post.UserName }}        
+       </li> 
+    {% endfor %}
+    </ul>
+{% endblock %}

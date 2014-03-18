@@ -4,6 +4,7 @@ namespace Angie\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Angie\BlogBundle\Entity\Category;
 
 class IndexController extends Controller
 {
@@ -12,9 +13,16 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-	//var_dump($this->getUser());exit();
-        //return $this->render('AngieBlogBundle:Default:exoTwigArray.html.twig', array('name' => $name));
-	//return array('name' => $name);
+
+		$category = new Category();
+		$category->setName('Category #1');
+		
+		$em= $this->getDoctrine()->getManager();
+		$em->persist($category);
+		$em->flush();
+		
+		
+		
 		$arrayPost = array(	
 					array('UserName'=>'Jenni','publish'=>false),
 					array('UserName'=>'Laurent','publish'=>true),
