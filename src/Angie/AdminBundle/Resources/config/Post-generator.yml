@@ -33,18 +33,33 @@ builders:
     new:
         params:
             title: New Post
-            display: [ title, body , is_published ]
+            display: [ title, body , is_published , categories]
             actions:
-                save: ~
+                #save: ~
                 list: ~
+                save-and-list: ~ 
+            fields:
+                categories:
+                    formType: entity
+                    addFormOptions:
+                        class: AngieBlogBundle:Category
+                        property: name
+                        multiple: true
 
     edit:
         params:
             title: "You're editing the object \"%object%\"|{ %object%: Post.title }|"
             display: [ title, body , is_published , categories ]
             actions:
-                save: ~
+                save-and-list: ~
                 list: ~
+            fields:
+                categories:
+                    formType: entity
+                    addFormOptions:
+                        class: AngieBlogBundle:Category
+                        property: name
+                        multiple: true
     show:
         params:
             title: "You're viewing the object \"%object%\"|{ %object%: Post.title }|"

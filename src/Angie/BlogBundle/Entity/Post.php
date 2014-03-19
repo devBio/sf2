@@ -62,7 +62,7 @@ class Post extends AbstractEntity
     protected $comments;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="posts")
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="posts")
      */
     protected $categories;
     
