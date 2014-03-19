@@ -18,6 +18,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Angie\BlogBundle\AngieBlogBundle(),
         	new FOS\UserBundle\FOSUserBundle(),
+        	new Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle(),
+        	new Admingenerator\UserBundle\AdmingeneratorUserBundle(),
+        	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+        	new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
