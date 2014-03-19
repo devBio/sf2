@@ -13,7 +13,7 @@ params:
 builders:
     list:
         params:
-            title: List for AdminBundle
+            title: List of Categories
             display: ~
             actions:
                 new: ~
@@ -29,21 +29,21 @@ builders:
             display: ~
     new:
         params:
-            title: New object for AdminBundle
-            display: ~
+            title: New Category
+            display: [name]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "You're editing the object \"%object%\"|{ %object%: Category.title }|"
-            display: ~
+            title: "You're editing the category \"%object%\"|{ %object%: Category.name }|"
+            display: [name]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "You're viewing the object \"%object%\"|{ %object%: Category.title }|"
+            title: "You're viewing the object \"%object%\"|{ %object%: Category.name }|"
             display: ~
             actions:
                 list: ~

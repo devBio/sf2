@@ -91,7 +91,6 @@ class Post extends AbstractEntity
      */
     public function setUpdatedValue()
     {
-    	$this->created = new \DateTime();
     	$this->updated = new \DateTime();
     	 
     }

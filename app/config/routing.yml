@@ -1,21 +1,13 @@
-angie_admin_comment:
-    resource: "@AngieAdminBundle/Controller/Comment/"
-    type:     admingenerator
-    prefix:   /admin/comments
-
-angie_admin_posts:
-    resource: "@AngieAdminBundle/Controller/Post/"
-    type:     admingenerator
-    prefix:   /admin/posts
-
-angie_admin_categories:
-    resource: "@AngieAdminBundle/Controller/Category/"
-    type:     admingenerator
-    prefix:   /admin/categories
+#AdminBundle
+angie_blog_admin:
+    resource: "@AngieAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
 
 angie_blog:
     resource: "@AngieBlogBundle/Resources/config/routing.yml"
     prefix:   /
+    
+       
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

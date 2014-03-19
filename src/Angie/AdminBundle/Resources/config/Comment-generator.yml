@@ -10,11 +10,12 @@ params:
         delete: ~
     batch_actions:
         delete: ~
+    i18n_catalog: comment
 builders:
     list:
         params:
-            title: List for AdminBundle
-            display: ~
+            title: List of Comments
+            display: [ post, body, created, updated ]
             actions:
                 new: ~
             object_actions:
@@ -29,21 +30,21 @@ builders:
             display: ~
     new:
         params:
-            title: New object for AdminBundle
-            display: ~
+            title: New Comments
+            display: [ post, body ]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "You're editing the object \"%object%\"|{ %object%: Comment.title }|"
-            display: ~
+            title: "You're editing the object"
+            display: [ post, body ]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "You're viewing the object \"%object%\"|{ %object%: Comment.title }|"
+            title: "You're viewing the object "
             display: ~
             actions:
                 list: ~

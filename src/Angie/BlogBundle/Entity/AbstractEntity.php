@@ -48,6 +48,18 @@ abstract class AbstractEntity
         throw new \Exception("Invalid method " . get_class($this). "::" . $method . "(" . print_r($args, 1) . ")");
     }
 
+    public function __toString()
+    {
+    	$attrs = array('name', 'title', 'id');
+    	foreach ($attrs as $attr) {
+    		if (property_exists($this, $attr)) {
+    			return $this->$attr;
+    		}
+    	}
+    
+    	throw new \Exception("Could not find a valid attribute for __toString() method of object (" . get_class($this) . ")");
+    }
+    
     public function setData($data)
     {
         foreach ($data as $key => $value) {

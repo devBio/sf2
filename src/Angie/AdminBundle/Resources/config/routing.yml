@@ -1,0 +1,25 @@
+#Admin
+angie_admin_categories:
+    resource: "@AngieAdminBundle/Controller/Category/"
+    type:     admingenerator
+    prefix:   /categories
+
+
+angie_admin_comment:
+    resource: "@AngieAdminBundle/Controller/Comment/"
+    type:     admingenerator
+    prefix:   /comments
+
+angie_admin_posts:
+    resource: "@AngieAdminBundle/Controller/Post/"
+    type:     admingenerator
+    prefix:   /posts
+
+
+#redirect admin homepage to post list
+angie_admin_home:
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: Angie_AdminBundle_Post_list #auto-generated route
+        permanent: true    
+    pattern: /

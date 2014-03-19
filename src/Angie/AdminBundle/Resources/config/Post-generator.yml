@@ -7,16 +7,17 @@ params:
     pk_requirement: ~
     fields: 
         is_published : 
-            getter : is_published
+            getter: is_published
     object_actions:
         delete: ~
     batch_actions:
         delete: ~
+    i18n_catalog: post
 builders:
     list:
         params:
             title: List of Posts
-            display: ~
+            display: [ title, body , is_published , categories ]
             actions:
                 new: ~
             object_actions:
@@ -31,15 +32,16 @@ builders:
             display: ~
     new:
         params:
-            title: New object for AdminBundle
-            display: ~
+            title: New Post
+            display: [ title, body , is_published ]
             actions:
                 save: ~
                 list: ~
+
     edit:
         params:
             title: "You're editing the object \"%object%\"|{ %object%: Post.title }|"
-            display: ~
+            display: [ title, body , is_published , categories ]
             actions:
                 save: ~
                 list: ~
