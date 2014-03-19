@@ -18,6 +18,23 @@ class PostController extends Controller
     {
 		$post = new Post();
 		$form = $this->createForm(new PostType(),$post);
+		
+
+		$form->handleRequest($request);
+		
+		if ($form->isValid()) {
+			// fait quelque chose comme sauvegarder la tâche dans la bdd
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($post);
+			$em->flush();
+			
+			return $this->redirect($this->generateUrl('angie_post'));
+		}
+		
+		
+		
+		
+		
     	return array('form' =>$form->createView());
     	
     }
