@@ -22,13 +22,19 @@ class PostController extends Controller
 
 		$form->handleRequest($request);
 		
+		
+		
 		if ($form->isValid()) {
 			// fait quelque chose comme sauvegarder la tâche dans la bdd
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($post);
 			$em->flush();
 			
+			$this->get('session')->getFlashBag()->add('success','Sauvegardé');
+			
 			return $this->redirect($this->generateUrl('angie_post'));
+		}else{
+			$this->get('session')->getFlashBag()->add('error' , 'Formulaire mal complété');
 		}
 		
 		
