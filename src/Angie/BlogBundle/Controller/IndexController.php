@@ -52,14 +52,14 @@ class IndexController extends Controller
 		);
 		return array('arrayPost' => $arrayPost);*/
     	
-    	/*
-    	 * @Template("AngieBlogBundle:Default:homePage.html.twig")
+    	
     	$posts = $this->getDoctrine()
     			->getRepository("AngieBlogBundle:Post")
     			->getPublishedPosts();
     	
-    	return array('arrayPost' =>$posts);*/
+    	return array('arrayPost' =>$posts);
     	
+/*
     	$message = \Swift_Message::newInstance()
     		->setSubject('Test Email SF2')
     		->setFrom('send@exemple.fr')
@@ -70,7 +70,7 @@ class IndexController extends Controller
     				)));
     
     	$this->get('mailer')->send($message);
-    	return array('arrayPost' =>array());
+    	return array('arrayPost' =>array());*/
     	
     	
     	
