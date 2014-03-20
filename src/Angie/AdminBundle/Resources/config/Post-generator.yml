@@ -22,14 +22,14 @@ builders:
                 new: ~
             object_actions:
                 edit: ~
-                delete: ~
+                delete: ~      
     excel:
         params: ~
         filename: ~
         filetype: ~
     filters:
         params:
-            display: ~
+            display: [ is_published ]
     new:
         params:
             title: New Post
