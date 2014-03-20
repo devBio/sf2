@@ -8,7 +8,7 @@ parameters:
     database_password: formation
     mailer_transport: smtp
     mailer_host: smtp.gmail.com
-    mailer_user: angelique.contal
-    mailer_password: mail0210
+    mailer_user: USER
+    mailer_password: PASS
     locale: fr
     secret: ThisTokenIsNotSoSecretChangeIt
