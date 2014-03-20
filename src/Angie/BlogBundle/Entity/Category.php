@@ -5,6 +5,7 @@ namespace Angie\BlogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Angie\BlogBundle\Entity\AbstractEntity;
 use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Post
@@ -29,6 +30,15 @@ class Category extends AbstractEntity
      * @ORM\Column(name="name", type="string", length=50)
      */
     protected $name;
+    
+    
+    /**
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=55, unique=true)
+     */
+    protected $slug;
+    
+    
     
     /**
      *

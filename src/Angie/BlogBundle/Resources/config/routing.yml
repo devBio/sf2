@@ -9,9 +9,22 @@ angie_home:
 angie_post: 
     pattern :  /post/new
     defaults: { _controller: AngieBlogBundle:Post:new }
-    
+ 
+ 
+angie_post: 
+   pattern :  /comment/new
+   defaults: { _controller: AngieBlogBundle:Comment:new }
+       
+angie_blog_category_view:
+    pattern:  /category/{slug}
+    defaults: { _controller: AngieBlogBundle:Category:view }
+
+
 
 angie_blog_post_view:
     pattern:  /{slug}
     defaults: { _controller: AngieBlogBundle:Post:view }
+
+
+
         

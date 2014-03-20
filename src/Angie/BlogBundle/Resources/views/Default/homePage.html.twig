@@ -4,22 +4,6 @@
 {% block title %} {{ parent() }} - NJ{% endblock %}
 
 
-{% block navBar %}
-
-    <nav class="blog-nav">
-      <a class="blog-nav-item active" href="#">Home</a>
-      <a class="blog-nav-item" href="#">New features</a>
-      <a class="blog-nav-item" href="#">Press</a>
-      <a class="blog-nav-item" href="#">New hires</a>
-      <a class="blog-nav-item" href="#">About</a>
-    </nav>
-  </div>
-</div>
-{% endblock %}
-
-
-
-
 {% block body %}
 <!--
     <h3>Test 1</h3>
@@ -44,13 +28,7 @@
  -->   
     <!-- blog-post -->
     {% for post in arrayPost %}
-    <div class="blog-post">
-        <h2 class="blog-post-title"> <a href="{{ path('angie_blog_post_view', {'slug': post.slug }) }} ">{{ post.title }}</a>    </h2>
-        <p class="blog-post-meta">{{ post.created|date("m/d/Y") }} by <a href="#">NJ</a></p>
-
-        <p> {{ post.body|striptags|truncate(50, true)|raw }}</p>
-        
-    </div>
+     {% include 'AngieBlogBundle:Default:PostInline.html.twig'%}
     <!-- end-blog-post -->
     {% endfor %}
 {% endblock %}

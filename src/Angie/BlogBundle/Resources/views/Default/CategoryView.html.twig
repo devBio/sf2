@@ -1,0 +1,17 @@
+{% extends 'AngieBlogBundle::layout.html.twig' %}
+
+
+{% block body %}
+    <!-- blog-post -->
+    
+    <div class="blog-post">
+        <h2 class="blog-post-title"> {{ category.name }}    </h2>
+        {% for post in category.posts %}
+            {% include 'AngieBlogBundle:Default:PostInline.html.twig'%}
+        {% endfor %}
+        
+        
+    </div>
+    <!-- end-blog-post -->
+   
+{% endblock %}

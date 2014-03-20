@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% stylesheets '@AngieBlogBundle/Resources/public/css/*' %}
+        {% stylesheets 
+            '@AngieBlogBundle/Resources/public/css/bootstrap.css'
+            '@AngieBlogBundle/Resources/public/css/blog.css' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -15,7 +17,7 @@
     <!-- navBar -->
     <div class="blog-masthead">
         <div class="container">
-            {% block navBar %}{% endblock %}
+            {{ knp_menu_render('AngieBlogBundle:Builder:mainMenu', {'template': 'AngieBlogBundle:Menu:knp_menu.html.twig'}) }}
         </div>
     </div>
     <!-- endNavBar -->    

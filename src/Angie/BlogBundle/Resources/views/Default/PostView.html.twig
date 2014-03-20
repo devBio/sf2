@@ -11,10 +11,12 @@
         <p> {{ post.body }}</p>
         
         {% for categ in post.categories %}
-         <button class="btn btn-lg btn-primary" type="button"> {{ categ.name }} </button>
+         <button class="btn btn-xs btn-primary" type="button"> {{ categ.name }} </button>
         {% endfor %}
         
     </div>
     <!-- end-blog-post -->
+    
+    {{ form(form) }}
    
 {% endblock %}

@@ -34,9 +34,26 @@ class Comment extends AbstractEntity
     /**
      * @var string
      *
+     * @ORM\Column(name="pseudo", type="string", length=50)
+     */
+    protected $pseudo;
+    
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_published", type="boolean")
+     */
+    protected $is_published;
+    
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="body", type="text")
      */
     protected $body;
+    
+    
     
     /**
      * @ORM\column(type="datetime")
@@ -47,6 +64,13 @@ class Comment extends AbstractEntity
      * @ORM\column(type="datetime")
      */
     protected $updated;
+    
+    
+    public function __construct($data = array())
+    {
+    	$this->is_published = false;
+    	parent::__construct($data);
+    }
     
     
     /**

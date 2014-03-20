@@ -9,6 +9,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Angie\BlogBundle\Entity\Post;
 use Angie\BlogBundle\Form\Type\PostType;
 
+
+use Angie\BlogBundle\Entity\Comment;
+use Angie\BlogBundle\Form\Type\CommentType;
+
 class PostController extends Controller
 {
     /**
@@ -58,10 +62,16 @@ class PostController extends Controller
     		throw $this->createNotFoundException($this->get('translator')->trans('This post does not exist'));
     	}
     	
+    	//return array('post'=> $post);
+    	
+    	/*form commentaires*/
+    	$comment = new Comment();
+    	$comment->setPost($post);
+    	$form = $this->createForm(new CommentType(),$comment);    	
     	
     	
-    	
-    	return array('post'=> $post);
+
+    	return array('post'=> $post, 'form' =>$form->createView());
     }
     
     

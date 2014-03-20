@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - POST NEW{% endblock %}
+
+
+{% block body %}
+
+{% for key, flashArray in app.session.flashbag.all() %}
+    {% for flash in flashArray %}
+        <div class="alert alert-{{ key }}">{{ flash }} </div>
+    {% endfor %}
+{% endfor %}
+
+
+{{ form(form) }}
+{% endblock %}
