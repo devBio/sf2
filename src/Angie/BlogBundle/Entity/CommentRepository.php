@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommentRepository extends EntityRepository
 {
+	public function getCategories(){
+		return $this->findAll();
+		
+	}
 }

@@ -56,8 +56,12 @@ class IndexController extends Controller
     	$posts = $this->getDoctrine()
     			->getRepository("AngieBlogBundle:Post")
     			->getPublishedPosts();
+    
+    	$categories = $this->getDoctrine()
+    	->getRepository("AngieBlogBundle:Category")
+    	->getCategories();
     	
-    	return array('arrayPost' =>$posts);
+    	return array('arrayPost' =>$posts,'arrayCategories' =>$categories);
     	
 /*
     	$message = \Swift_Message::newInstance()

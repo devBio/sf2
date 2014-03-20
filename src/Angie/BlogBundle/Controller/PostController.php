@@ -33,7 +33,7 @@ class PostController extends Controller
 			$this->get('session')->getFlashBag()->add('success','Sauvegardé');
 			
 			return $this->redirect($this->generateUrl('angie_post'));
-		}else{
+		} else {
 			$this->get('session')->getFlashBag()->add('error' , 'Formulaire mal complété');
 		}
 		
@@ -44,4 +44,25 @@ class PostController extends Controller
     	return array('form' =>$form->createView());
     	
     }
+    
+    
+    /**
+     * @Template("AngieBlogBundle:Default:PostView.html.twig")
+     */
+    public function viewAction($slug)
+    {
+    	$repository = $this->getDoctrine()->getRepository('AngieBlogBundle:Post');
+    	$post = $repository->findOneBySlug($slug);
+    	
+    	if (!$post) {
+    		throw $this->createNotFoundException($this->get('translator')->trans('This post does not exist'));
+    	}
+    	
+    	
+    	
+    	
+    	return array('post'=> $post);
+    }
+    
+    
 }

@@ -14,5 +14,6 @@ class PostRepository extends EntityRepository
 {
 	public function getPublishedPosts(){
 		return $this->findBy(array('is_published' => true), array('created' =>'DESC'));
+		//return $this->findBy(array('is_published' => true), array('created' =>'DESC'));
 	}
 }

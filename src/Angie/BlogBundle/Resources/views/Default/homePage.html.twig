@@ -1,11 +1,28 @@
-{% extends '::base.html.twig' %}
+{% extends 'AngieBlogBundle::layout.html.twig' %}
 
 
 {% block title %} {{ parent() }} - NJ{% endblock %}
 
 
+{% block navBar %}
+
+    <nav class="blog-nav">
+      <a class="blog-nav-item active" href="#">Home</a>
+      <a class="blog-nav-item" href="#">New features</a>
+      <a class="blog-nav-item" href="#">Press</a>
+      <a class="blog-nav-item" href="#">New hires</a>
+      <a class="blog-nav-item" href="#">About</a>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
 {% block body %}
-    <p>Test 1</p>
+<!--
+    <h3>Test 1</h3>
     <ul>
     {% for post in arrayPost %}
        <li {% if post.is_published == false %} style="color:red;" {% endif %} >
@@ -16,7 +33,7 @@
     
     
     
-    <p>Test 2</p>
+    <h3>Test 2</h3>
     <ul>
     {% for post in arrayPost %}
        <li class="{{ (loop.index is odd) ? 'odd' : 'even' }}" style="{{ post.is_published ? '':'color:red;' }}">
@@ -24,4 +41,46 @@
        </li> 
     {% endfor %}
     </ul>
+ -->   
+    <!-- blog-post -->
+    {% for post in arrayPost %}
+    <div class="blog-post">
+        <h2 class="blog-post-title"> <a href="{{ path('angie_blog_post_view', {'slug': post.slug }) }} ">{{ post.title }}</a>    </h2>
+        <p class="blog-post-meta">{{ post.created|date("m/d/Y") }} by <a href="#">NJ</a></p>
+
+        <p> {{ post.body|striptags|truncate(50, true)|raw }}</p>
+        
+    </div>
+    <!-- end-blog-post -->
+    {% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+{% block sidebar %}
+    <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Catégories</h4>
+            <ol class="list-unstyled">
+            {% for category in arrayCategories %}
+                 <li><a href="#">{{ category.name }}</a></li>
+            {% endfor %}
+              
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
 {% endblock %}

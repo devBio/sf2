@@ -23,6 +23,7 @@ class AppKernel extends Kernel
         	new Admingenerator\UserBundle\AdmingeneratorUserBundle(),
         	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
         	new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+        	new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -10,4 +10,8 @@ angie_post:
     pattern :  /post/new
     defaults: { _controller: AngieBlogBundle:Post:new }
     
-    
+
+angie_blog_post_view:
+    pattern:  /{slug}
+    defaults: { _controller: AngieBlogBundle:Post:view }
+        
